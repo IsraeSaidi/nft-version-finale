@@ -1,0 +1,157 @@
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+
+
+
+
+
+.cards {
+  padding: 0;
+  list-style-type: none;
+
+ 
+}
+
+#div_top_hypers {
+  background-color:#eeeeee;
+  display:inline;      
+}
+
+.cards li{
+  float: left;
+  margin-left: 40px;
+  margin-right: -180px;
+
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  width: 60%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+
+.card__image {      
+
+  object-fit: contain;
+  // width: 570px;
+  height: 400px;
+}
+
+.boutton{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background-color: #777674;
+  margin-left: 5px;
+  
+}
+.image {
+  width: 570px;
+  height: 400px;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: transparent;
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header{
+  transform: translateY(0);
+  background-color: #fff;
+  border-top-left-radius: 25%;
+}
+
+.card:hover {
+
+ 
+  .card__arc path{
+    fill: #fff;
+  }
+  .card__title{
+    color: gray;
+  }
+  .card__price{
+    color: black;
+  }
+  .description{
+    color: rgb(73, 72, 72);
+  }
+  .fav{
+    color: black;
+  }
+  
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  
+  color: transparent;
+}
+
+
+.description {
+font-family:cursive;
+font-weight: bold;
+color: transparent;
+}   
+
+.card__price{
+  font-size: 20px;
+  color:transparent
+}
+
+
+
+.fav{
+  border: none; 
+  background-color: transparent;
+  color: transparent;
+  margin-left: 150px;
+}
+

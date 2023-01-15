@@ -1,0 +1,59 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<mat-toolbar class="md-tall">
+    <mat-toolbar-row style="justify-content: space-between;flex-direction: row">
+
+<div style="display: flex;flex-direction: row">
+        <div> <a [routerLink]="['/']"><img src="assets/logo.png" alt="oui" width="150px" style="margin-top: 30%;margin-left: -40px;"></a>
+        </div>
+      
+        <div *ngIf="account; else noContent1">
+       <nav>
+                <a [routerLink]="['/']">Accueil</a>
+                <a [routerLink]="['/home']">Explorez NFT</a>
+                <a [routerLink]="['/createNft']" >Créer NFT</a>
+                <a [routerLink]="['/myListedItems']">Mes NFTs</a>
+                <a [routerLink]="['/myPurchases']"  >Mes achats</a>
+                <div id="indicator"></div>
+        </nav>
+    </div>
+    <ng-template #noContent1>
+      <nav>
+                <a [routerLink]="['/']">Accueil</a>
+                <a [routerLink]="['/home']">Explorez NFT</a>
+                <div id="indicator" style="margin-left: 24px;"></div>
+     </nav>
+      </ng-template>
+    </div>
+
+    <div *ngIf="account; else noContent">
+        <ul style="display: flex;flex-direction: row;column-gap: 10px;margin: 0;">
+<li style="margin-top: 14%; list-style: none;">
+        <a   [href]='"https://etherscan.io/address/"+account'     
+        target="_blank"  ><img src="assets/userCon.png" alt="oui" width="40px"></a>
+    </li>
+   
+  <li style="margin-top: 20%;list-style: none;">  <button mat-button  (click)="openDialog()"><li><mat-icon color="white">shopping_cart</mat-icon></li></button>
+
+  </li>
+
+<li style="margin-top: 20%;list-style: none;">  <button mat-button  (click)="openDialogFav()"><li><mat-icon color="white">favorite</mat-icon></li></button>
+</li>
+
+
+
+<li *ngIf="adminAccount == 1"style="margin-top: 20%;list-style: none;">  <button mat-button [routerLink]="['/admin']" ><li><mat-icon color="white">dashboard</mat-icon></li></button>
+</li>
+
+        </ul>
+      </div>
+      
+      <ng-template #noContent>
+         <button id="connexion" (click)="web3Handler()" mat-stroked-button>Se connecter (MetaMask)</button> 
+        
+      </ng-template>
+
+            
+
+    </mat-toolbar-row>
+  </mat-toolbar>

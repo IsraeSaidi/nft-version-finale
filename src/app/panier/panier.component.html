@@ -1,0 +1,41 @@
+
+  <h2 mat-dialog-title style="text-align: center; color:#c1a14e; font-family:cursive;">Mon Panier</h2>
+  <hr>
+  <div class="shopping-cart-total">
+    <span class="lighter-text" style="font-size: 16px;color: #c1a14e;">Total : </span>
+    <span style="color: black;font-weight: bold;">{{getTotal()}} ETH</span>
+  </div>
+  <hr>
+<mat-dialog-content class="mat-typography" >
+ 
+  
+  <table>
+    <div *ngFor="let item of items  ">
+    <td style="width: 40%;">
+      <img  src={{item.image}} alt="item1" style="width: 200px;margin-right: 80px;"/>
+  
+    </td>
+    <td >
+      <div class="item-name" style="font-size: 20px; font-family:cursive;"> {{item.name}}</div>
+     
+      <div class="item-price" style="font-weight: bold;">{{formatEther(item.totalPrice)}} ETH</div>
+      <button  class="icon"  class="btn btn-transparent"  (click)="deletecart(item.itemId._hex)">
+      <span class="material-icons">delete</span>
+    </button> 
+   
+    </td>
+  
+  
+  </div> 
+  </table>
+  
+ 
+     
+</mat-dialog-content>
+<mat-dialog-actions align="end" >
+  <button mat-raised-button style="background-color: #c1a14e;color: white;" (click)="Buypanier()"><mat-icon> attach_money</mat-icon> Acheter</button>
+  <button mat-button mat-dialog-close style="background-color: #9a4010;color: white;">Cancel</button>
+ 
+
+
+</mat-dialog-actions>

@@ -1,0 +1,99 @@
+<!--  
+  <div class="container">
+    <p style="text-align:left;font-family: 'Oleo Script Swash Caps';font-size: 30px">NFT</p>
+    <mat-divider></mat-divider>
+    <br>
+    <form [formGroup]="form" (ngSubmit)="createNFT()" >
+    <mat-form-field  appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput name="Name" formControlName="Name" >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <input matInput name="description" formControlName="description" >
+    </mat-form-field>
+    <mat-form-field  appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput name="price" formControlName="price" type="number">
+    </mat-form-field>
+    <br>
+    
+    
+    <br>
+ 
+    <mat-form-field class="x">
+      <div>
+        <mat-toolbar>
+          <input matInput [(ngModel)]="fileAttr1" readonly name="name1" formControlName="image"/>
+          <button mat-flat-button color="primary">Importer Image</button>
+        </mat-toolbar>
+        <input
+          type="file" #fileInput1 id="uploadFile" (change)="uploadToIPFS($event)" name="img1" multiple="multiple" accept="image/*" 
+           />
+      </div>
+    </mat-form-field>
+    
+      <br>
+
+    <div style="width: 35vw;text-align: right;" *ngIf="LoadImageFinish; else noContent1">
+        <button mat-raised-button  style="font-weight: bold;font-size: 20px;" type="submit">Ajouter</button>
+    </div>
+    <ng-template #noContent1>
+        <div style="width: 35vw;text-align: right;">
+        <button mat-raised-button  style="font-weight: bold;font-size: 20px;" type="submit" disabled>Ajouter</button>
+    </div>
+    </ng-template>
+    </form>
+    </div>
+ -->
+
+ <body>
+	<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+				<h2>Créer votre NFT</h2>
+        <br>
+		    <form [formGroup]="form" (ngSubmit)="createNFT()" >
+          <mat-form-field [style.width.px]=327 appearance="fill">
+              <mat-label>Nom</mat-label>
+              <input matInput name="Name" formControlName="Name" >
+          </mat-form-field>
+          <mat-form-field [style.width.px]=327 appearance="fill">
+              <mat-label>Description</mat-label>
+              <input  matInput name="description" formControlName="description" >
+          </mat-form-field>
+          <mat-form-field  [style.width.px]=327 appearance="fill">
+              <mat-label>Prix</mat-label>
+              <input matInput name="price" formControlName="price" type="number">
+          </mat-form-field>
+         
+       
+          <mat-form-field class="x" [style.width.px]=327>
+            <div>
+              <mat-toolbar>
+             
+                <input matInput [(ngModel)]="fileAttr1" readonly name="name1" formControlName="image"/>
+                <button mat-flat-button color="dark"><mat-icon>camera_enhance</mat-icon></button>
+              </mat-toolbar>
+              <input
+                type="file" #fileInput1 id="uploadFile" (change)="uploadToIPFS($event)" name="img1" multiple="multiple" accept="image/*" 
+                 /> 
+            </div>
+          </mat-form-field>
+          
+            <br>
+      
+           <div *ngIf="LoadImageFinish; else noContent1">
+              <button mat-raised-button   type="submit" style="background-color: #c1a14e;">Ajouter</button>
+          </div>
+          <ng-template #noContent1>
+              <div >
+              <button mat-raised-button   type="submit" style="background-color: #c1a14e;" disabled>Ajouter</button>
+          </div>
+          </ng-template> 
+          </form>
+			</div>
+		</div>
+	</div>
+</body>

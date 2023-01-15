@@ -1,0 +1,84 @@
+
+<h1 style="color: #c1a14e;margin-top: 20px;font-family: cursive;text-align: center;">Listed</h1>
+
+<div *ngIf="ListedItems.length > 0"> 
+ <div *ngFor="let item of ListedItems">
+ <div id="div_top_hypers">
+  <ul class="cards">
+   
+   <li class="a_top_hypers">
+     <a href="" class="card">
+      
+      <div class="image">
+       <img src={{item.image}} class="card__image" alt="" />
+      </div>
+       <div class="card__overlay">
+         <div class="card__header">
+           <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+          
+           <div class="card__header-text">
+             <h3 class="card__title">{{item.name}}</h3>  
+             <div style="white-space: nowrap;">
+             <span  style="display: inline-block;" class="card__price">{{formatEther(item.totalPrice)}}ETH</span> 
+ 
+            </div>
+             <p class="description">{{item.description}} hrbghjerjgfgersgjhvrejdhgjhre</p>
+             
+            
+             
+           </div>
+        
+         </div>
+       </div>
+     </a>      
+   </li>
+ 
+ </ul>
+
+</div>
+</div>
+</div>
+
+
+
+
+<hr style="width: 100%;">
+  <h1 style="color: #c1a14e;margin-top: 20px;font-family: cursive;text-align: center;">Sold</h1>
+
+<div *ngIf="ListedItems.length > 0"> 
+  <div *ngFor="let item of SoldItems">
+  <div id="div_top_hypers">
+   <ul class="cards">
+    
+    <li class="a_top_hypers">
+      <a href="" class="card">
+       
+       <div class="image">
+        <img src={{item.image}} class="card__image" alt="" />
+       </div>
+        <div class="card__overlay">
+          <div class="card__header">
+            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+           
+            <div class="card__header-text">
+              <h3 class="card__title">{{item.name}}</h3>  
+              <div style="white-space: nowrap;">
+              <span  style="display: inline-block;" class="card__price">{{formatEther(item.totalPrice)}}ETH</span> 
+  
+             </div>
+              <p class="description">{{item.description}} hrbghjerjgfgersgjhvrejdhgjhre</p>
+              
+             
+              
+            </div>
+         
+          </div>
+        </div>
+      </a>      
+    </li>
+  
+  </ul>
+ 
+ </div>
+ </div>
+ </div>
